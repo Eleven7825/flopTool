@@ -34,5 +34,5 @@ Support variable changes and slicing. | Does not support variable changes and sl
 Support sparse matrices.  | Does not support sparse matrices.
 Support multiple functions in a script but not nested. | Support nested function.
 Change the rules in TXT file. | Change the rules in EXCEL file.
-Support Octave $>$ 4.2.0 and Matlab. | Only support Matlab.
+Support Octave > 4.2.0 and Matlab. | Only support Matlab.
 Generate transparent code in a separate M file for auditing. | Display the flop count on the command window for auditing.
