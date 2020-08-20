@@ -1,0 +1,4 @@
+<|OPERATIONS|>    .          <|FORMULAS|>
+norm			. 			2*max(ncol,nrow)
+
+
