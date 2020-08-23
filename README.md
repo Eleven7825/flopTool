@@ -18,6 +18,8 @@ GNU Lesser General Public License, either version 3 of the License, or any later
 
      1. `Warning: In line XX, can't find left variable, assigning value 1 to it`, in this case, program does not find variables corresponding to operators in this line. The program will automatically assign 1 to that unknown variable and continue counting in this line. The user need to add brackets around the variable they want the program to count at the original file and run `flop_script.m` again, the temporary file will be automatically overwritten if the user run it again.
 
+1. Create a variable `flop\_counter}` and set it to be 0 by calling `flop\_counter = 0.`
+
 1. Run the temporary file, if it is a function, enter the temporary function signature, for example `fileName_tmp(A)`; if it's a script, click run. The temporary code should be running like the original code with the same output. After executing, a variable called flop_counter should be created in the workspace. In Matlab, users can see it directly in the workspace. In Octave, users need to query the variable flop_counter in command window to get the result.
 
 ## Comparison
