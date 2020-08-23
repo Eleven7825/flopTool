@@ -112,7 +112,7 @@ for n = 1:length(TXTcell)
             funexpt = TXTcell{n};
             new_TXTcell{n} = strrep(funexpt,nametxt,fileName_tmp);
             hnew_TXTcell = new_TXTcell.';
-            new_TXTcell = {hnew_TXTcell{1:n+Nlines},{'global flop_counter'},{'flop_counter = 0;'}...
+            new_TXTcell = {hnew_TXTcell{1:n+Nlines},{'global flop_counter'},...
                 hnew_TXTcell{n+Nlines+1:end}}.';
             Nlines = Nlines + 2;
             
@@ -140,7 +140,7 @@ end
 
 % if the file is a not function, set flop_counter to be zero
 if ~isfun
-    new_TXTcell = [{'global flop_counter'};{'flop_counter = 0;'};new_TXTcell];
+    new_TXTcell = [{'global flop_counter'};new_TXTcell];
 end
 
 % add comment
