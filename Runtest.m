@@ -10,11 +10,6 @@ fprintf('Calling the flop_script.m: \n')
 fprintf(">> flop_script('example')\n")
 
 flop_script('example')
-fprintf('\n\n')
-
-fprintf('Setting flop_counter to be 0:\n')
-fprintf('>> flop_counter = 0')
-flop_counter = 0
 
 fprintf("\nCalling the example_tmp.m:\n")
 fprintf(">> example_tmp\n\n")
