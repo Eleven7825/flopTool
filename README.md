@@ -7,10 +7,23 @@ Leonardo T. Rolla and Shiyi Chen
 ## License
 GNU Lesser General Public License, either version 3 of the License, or any later version.
 
-## Usage
-1. Prepare all code within one M file if the script call multiple functions in different scripts, internalize the functions into the main file.
+## Discription
+This tool evaluates the complexity of a given M script by couting its flops. Flops represent for floating-point operations. Some flops for operations are listed below:
+Operation | Dimension | Flops
+---------|----------|--------------
+`a * x` | `a` is a scalar, `x` is a n by 1 array | `n` 
+`x * y` | `x` and `y` are both n by 1 arrays | `2n` 
+`A * x` | `A` is m by n array, `x` is n by 1 array | `2*m*n`
+`A * B` | `A` is m by r array, `B` is r by n array | `2*m*n*r`
+`A .* B` | `A` and `B` are both m by n arrays | `2*m*n` 
+`A + B` | `A` and `B` are both m by n arrays | `m*n` 
+`A - B` | `A` and `B` are both m by n arrays | `m*n`
+`A/ b` | `A` is m by m array, `b` is m by 1 array | about `(2*m^3)/3`
 
-1. Put this file in the same folder with flop_update.m, flop_script.m, go to that folder, execute  `flop_script("fileName.m")` or `flop_script("fileName")`.
+## Usage
+Run `easy_runtest.m` for the usage guidance.
+
+## Warnings
 
 1. Notice the command window, if the program terminates without any output in command window, then there will be a temporary file called `fileName_tmp.m` generated under the same folder. If warning appears, the program will tell the user which line in the original file causes the problem. The user needs to check the line in the original file and fixes the error. There are two types of warning:
 
@@ -23,9 +36,11 @@ GNU Lesser General Public License, either version 3 of the License, or any later
 ## Comparison
 We want users to have a choice between our tool and former tool writen by [Qian Hang](http://hangqian.weebly.com/)(his work can be find [here](https://www.mathworks.com/matlabcentral/fileexchange/50608-counting-the-floating-point-operations-flops)).
 
-The new tool |  ``FLOPS''
+"flopTool"|  ``FLOPS''
 -------------|--------------
-The new tool may be more convenient for counting with changing input variable sizes in the sense that it does not need profiling, saving or loading MAT files. | Need profiling, saving and loading MAT files.
+
+Compatible with GNU Octave and Matlab. | Only for Matlab.
+"flopTool" may be more convenient for counting with changing input variable sizes in the sense that it does not need profiling, saving or loading MAT files. | Need profiling, saving and loading MAT files.
 Longer elapse time for the temporary counting tool, which makes our tool not suitable for a long script. | Same elapse time with the original file.
 Cannot recognize functions containing multiple arguments. | Can accept some multiple arguments like sum(A,2). 
 Cannot recognize functions handles. | Can recognize bsxfun. 
