@@ -27,16 +27,15 @@ Run `easy_runtest.m` for the usage guidance.
 
 Notice the command window, if the program terminates without any output in command window, then there will be a temporary file called `fileName_tmp.m` generated under the same folder. If warning appears, the program will tell the user which line in the original file causes the problem. The user needs to check the line in the original file and fixes the error. There are two types of warning:
 
-     1. `Warning: In line XX, unrecognized pattern` indicates the flop analyzer crashed at XX line. For example, there may be some brackets missing which caused the program fail to read the variables. In this case, the program will jump it and continue counting the rest of script. The user needs to check whether the brackets are missing in the line, then run `flop_script.m` again.
+1. `Warning: In line XX, unrecognized pattern`indicates the flop analyzer crashed at XX line. For example, there may be some brackets missing which caused the program fail to read the variables. In this case, the program will jump it and continue counting the rest of script. The user needs to check whether the brackets are missing in the line, then run `flop_script.m` again.
 
-     1. `Warning: In line XX, can't find left variable, assigning value 1 to it`, in this case, program does not find variables corresponding to operators in this line. The program will automatically assign 1 to that unknown variable and continue counting in this line. The user need to add brackets around the variable they want the program to count at the original file and run `flop_script.m` again, the temporary file will be automatically overwritten if the user run it again.
+1. `Warning: In line XX, can't find left variable, assigning value 1 to it`, in this case, program does not find variables corresponding to operators in this line. The program will automatically assign 1 to that unknown variable and continue counting in this line. The user need to add brackets around the variable they want the program to count at the original file and run `flop_script.m` again, the temporary file will be automatically overwritten if the user run it again.
 
 ## Comparison
 We want users to have a choice between our tool and former tool writen by [Qian Hang](http://hangqian.weebly.com/)(his work can be find [here](https://www.mathworks.com/matlabcentral/fileexchange/50608-counting-the-floating-point-operations-flops)).
 
 flopTool |  FLOPS
 -------------|--------------
-
 Compatible with GNU Octave and Matlab. | Only for Matlab.
 "flopTool" may be more convenient for counting with changing input variable sizes in the sense that it does not need profiling, saving or loading MAT files. | Need profiling, saving and loading MAT files.
 Longer elapse time for the temporary counting tool, which makes our tool not suitable for a long script. | Same elapse time with the original file.
