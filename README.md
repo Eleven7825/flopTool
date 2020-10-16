@@ -8,7 +8,7 @@ Leonardo T. Rolla and Shiyi Chen
 GNU Lesser General Public License, either version 3 of the License, or any later version.
 
 ## Discription
-This tool evaluates the complexity of a given M script by couting its flops. Flops represent for floating-point operations. Some flops for operations are listed below:
+This tool evaluates the complexity of a given M script by counting its flops. Flops represent for floating-point operations. Some flops for operations are listed below:
 Operation | Dimension | Flops
 ---------|----------|--------------
 `a * x` | `a` is a scalar, `x` is a n by 1 array | `n` 
